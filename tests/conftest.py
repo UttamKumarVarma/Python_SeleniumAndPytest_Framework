@@ -16,12 +16,13 @@ def pytest_addoption(parser):
 def browserSetup(request):
     global driver
     # Get the current directory of this script
-    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-    DRIVER_PATH = os.path.join(PROJECT_ROOT, "../drivers/chromedriver")
-    service_object = Service(DRIVER_PATH)
+    #PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+    #DRIVER_PATH = os.path.join(PROJECT_ROOT, "../drivers/chromedriver")
+    #service_object = Service(DRIVER_PATH)
     browser_name=request.config.getoption("browser_name")
     if browser_name == "chrome":
-        driver = webdriver.Chrome(service=service_object)
+        #driver = webdriver.Chrome(service=service_object)
+        driver = webdriver.Chrome()
     elif browser_name == "edge":
         driver = webdriver.Edge()
     elif browser_name == "firefox":
